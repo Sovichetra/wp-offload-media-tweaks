@@ -74,9 +74,9 @@ class Amazon_S3_and_CloudFront_Tweaks {
 		 * Custom S3 API Example: MinIO
 		 * @see https://min.io/
 		 */
-		//add_filter( 'as3cf_aws_s3_client_args', array( $this, 'minio_s3_client_args' ) );
-		//add_filter( 'as3cf_aws_get_regions', array( $this, 'minio_get_regions' ) );
-		//add_filter( 'as3cf_aws_s3_url_domain', array( $this, 'minio_s3_url_domain' ), 10, 5 );
+		add_filter( 'as3cf_aws_s3_client_args', array( $this, 'minio_s3_client_args' ) );
+		add_filter( 'as3cf_aws_get_regions', array( $this, 'minio_get_regions' ) );
+		add_filter( 'as3cf_aws_s3_url_domain', array( $this, 'minio_s3_url_domain' ), 10, 5 );
 		//add_filter( 'as3cf_upload_acl', array( $this, 'minio_upload_acl' ), 10, 1 );
 		//add_filter( 'as3cf_upload_acl_sizes', array( $this, 'minio_upload_acl' ), 10, 1 );
 		//add_filter( 'as3cf_aws_s3_console_url', array( $this, 'minio_s3_console_url' ) );
@@ -334,7 +334,7 @@ class Amazon_S3_and_CloudFront_Tweaks {
 	 */
 	public function minio_get_regions( $regions ) {
 		$regions = array(
-			'us-east-1' => 'Default',
+			'ap-southeast-1' => 'Default',
 		);
 
 		return $regions;
