@@ -313,7 +313,7 @@ class Amazon_S3_and_CloudFront_Tweaks {
 	 */
 	public function minio_s3_client_args( $args ) {
 		// Example changes endpoint to connect to a local MinIO server configured to use port 54321 (the default MinIO port is 9000).
-		$args['endpoint'] = 'http://127.0.0.1:54321';
+		$args['endpoint'] = 'https://asset-api.ams.com.kh';
 
 		// Example forces SDK to use endpoint URLs with bucket name in path rather than domain name as required by MinIO.
 		$args['use_path_style_endpoint'] = true;
@@ -355,7 +355,7 @@ class Amazon_S3_and_CloudFront_Tweaks {
 	 */
 	public function minio_s3_url_domain( $domain, $bucket, $region, $expires, $args ) {
 		// MinIO doesn't need a region prefix, and always puts the bucket in the path.
-		return '127.0.0.1:54321/' . $bucket;
+		return 'asset-api.ams.com.kh/' . $bucket;
 	}
 
 	/**
